@@ -1,4 +1,4 @@
-NAME = ex01
+NAME = ex03
 CXX = clang++
 INCLUDES = -I $(HEAD_DIR)
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
@@ -7,11 +7,14 @@ RM = rm -rf
 
 #	HEADER
 HEAD_DIR = ./
-HEADS =	Fixed.hpp
+HEADS =	Fixed.hpp		\
+		Point.hpp
 
 #	SOURCE
 SRCS_DIR = ./
 SRCS =	Fixed.cpp		\
+		Point.cpp		\
+		bsp.cpp			\
 		main.cpp
 
 #	OBJECT_FILES
