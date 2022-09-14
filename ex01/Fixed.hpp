@@ -13,11 +13,10 @@ public:
 
 	~Fixed();
 
-	Fixed & operator = (const Fixed &other);
+	Fixed& operator = (const Fixed &other);
 
 	int getRawBits() const;
 	void setRawBits(const int raw);
-
 
 	float toFloat( void ) const;
 	int toInt( void ) const;

@@ -36,10 +36,8 @@ public:
 	Fixed &max(Fixed &a, Fixed &b);
 	static const Fixed &max(const Fixed &a, const Fixed &b);
 
-
 	int getRawBits() const;
 	void setRawBits(const int raw);
-
 
 	float toFloat( void ) const;
 	int toInt( void ) const;

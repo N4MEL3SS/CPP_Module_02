@@ -41,6 +41,7 @@ Fixed Fixed::operator + (const Fixed &other) const
 {
 	Fixed result;
 	result.setRawBits(this->getRawBits() + other.getRawBits());
+
 	return result;
 }
 
@@ -48,6 +49,7 @@ Fixed Fixed::operator - (const Fixed &other) const
 {
 	Fixed result;
 	result.setRawBits(this->getRawBits() - other.getRawBits());
+
 	return result;
 }
 
@@ -55,6 +57,7 @@ Fixed Fixed::operator * (const Fixed &other) const
 {
 	Fixed result;
 	result.setRawBits((this->getRawBits() * other.getRawBits()) >> bits);
+
 	return result;
 }
 
@@ -62,27 +65,28 @@ Fixed Fixed::operator / (const Fixed &other) const
 {
 	Fixed result;
 	result.setRawBits((this->getRawBits() / other.getRawBits()) << bits);
+
 	return result;
 }
 
 bool Fixed::operator == (const Fixed &other) const
 {
-	return this->getRawBits() == other.getRawBits();
+	return (this->getRawBits() == other.getRawBits());
 }
 
 bool Fixed::operator != (const Fixed &other) const
 {
-	return this->getRawBits() != other.getRawBits();
+	return (this->getRawBits() != other.getRawBits());
 }
 
 bool Fixed::operator <= (const Fixed &other) const
 {
-	return this->getRawBits() <= other.getRawBits();
+	return (this->getRawBits() <= other.getRawBits());
 }
 
 bool Fixed::operator >= (const Fixed &other) const
 {
-	return this->getRawBits() >= other.getRawBits();
+	return (this->getRawBits() >= other.getRawBits());
 }
 
 bool Fixed::operator > (const Fixed &other) const
@@ -98,6 +102,7 @@ bool Fixed::operator < (const Fixed &other) const
 Fixed &Fixed::operator++()
 {
 	this->rawBits++;
+
 	return *this;
 }
 
@@ -105,12 +110,14 @@ Fixed Fixed::operator++(int)
 {
 	Fixed temp(*this);
 	this->rawBits++;
+
 	return temp;
 }
 
 Fixed &Fixed::operator--()
 {
 	this->rawBits--;
+
 	return *this;
 }
 
@@ -118,26 +125,27 @@ Fixed Fixed::operator--(int)
 {
 	Fixed temp(*this);
 	this->rawBits--;
+
 	return temp;
 }
 
 Fixed &Fixed::max(Fixed &a, Fixed &b)
 {
-	return a > b ? a : b;
+	return (a > b ? a : b);
 }
 
 const Fixed &Fixed::max(const Fixed &a, const Fixed &b)
 {
-	return a > b ? a : b;
+	return (a > b ? a : b);
 }
 Fixed &Fixed::min(Fixed &a, Fixed &b)
 {
-	return a > b ? b : a;
+	return (a > b ? b : a);
 }
 
 const Fixed &Fixed::min(const Fixed &a, const Fixed &b)
 {
-	return a > b ? b : a;
+	return (a > b ? b : a);
 }
 
 void Fixed::setRawBits(const int raw)
@@ -165,5 +173,6 @@ int Fixed::toInt() const
 std::ostream &operator << (std::ostream &ostream, const Fixed &fixed)
 {
 	ostream << fixed.toFloat();
+
 	return ostream;
 }

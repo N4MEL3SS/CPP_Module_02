@@ -50,7 +50,7 @@ int Fixed::getRawBits() const
 
 float Fixed::toFloat() const
 {
-	return ((float) rawBits / (1 << bits));
+	return ((float)rawBits / (1 << bits));
 }
 
 int Fixed::toInt() const
@@ -62,5 +62,6 @@ int Fixed::toInt() const
 std::ostream &operator << (std::ostream &ostream, const Fixed &fixed)
 {
 	ostream << fixed.toFloat();
+
 	return ostream;
 }
