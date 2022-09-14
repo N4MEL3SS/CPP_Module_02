@@ -2,7 +2,8 @@
 
 Fixed gf(Point const a, Point const b, Point const d)
 {
-	return (d.getX() - a.getX()) * (b.getY() - a.getY()) - (d.getY() - a.getY()) * (b.getX() - a.getX());
+	return (d.getX() - a.getX()) * (b.getY() - a.getY()) - \
+		(d.getY() - a.getY()) * (b.getX() - a.getX());
 }
 
 bool f(Point const a, Point const b, Point const c, Point const d)
@@ -12,8 +13,6 @@ bool f(Point const a, Point const b, Point const c, Point const d)
 
 bool bsp(Point const a, Point const b, Point const c, Point const point)
 {
-	std::cout << "----------------------" << std::endl;
-
 	if(f(a, b, c, point) && f(b, c, a, point) && f(c, a, b, point))
 		return (true);
 	return (false);

@@ -1,11 +1,11 @@
 #include "Point.hpp"
 
-int main( void )
+int main()
 {
 	Point const a(0, 0);
-	Point  const b(5, 0);
-	Point  const c(0, 5);
-	Point const point(1, 1);
+	Point  const b(0, 4);
+	Point  const c(3, 0);
+	Point const point(0, 0);
 
 	std::cout << "a.x: " << a.getX() << std::endl;
 	std::cout << "a.y: " << a.getY() << std::endl;
@@ -16,9 +16,11 @@ int main( void )
 	std::cout << "point.x: " << point.getX() << std::endl;
 	std::cout << "point.y: " << point.getY() << std::endl;
 
+	std::cout << "----------------------" << std::endl;
+
 	if (bsp(a, b, c, point))
-		std::cout << "Point is in triangle!" << std::endl;
+		std::cout << "Point is in a triangle!" << std::endl;
 	else
-		std::cout << "No!" << std::endl;
+		std::cout << "Point is not in a triangle!!!" << std::endl;
 	return 0;
 }

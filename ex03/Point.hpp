@@ -12,10 +12,10 @@ public:
 
 	~Point();
 
-	Point& operator = (const Point &other);
+	Point &operator = (const Point&);
 
-	Fixed const getX() const;
-	Fixed const getY() const;
+	Fixed getX() const;
+	Fixed getY() const;
 
 private:
 	Fixed const _x;
